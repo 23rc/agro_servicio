@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <!--Boostrap CSS-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link  href="css/styles.css" rel="stylesheet">
+    <style>
+        body{
+          align-items: center;
+          padding-top:130px;
+          padding-bottom:px ;
+          background-color: rgba(97, 122, 162, 0.414);
+      }
+    </style>
+    <title>Ingrese sus datos</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 shadow-lg p-3 mb-5" >
+            <div class="card border-primary">
+                <div class="card-header bg-primary text-white" style="font-size:xx-large;" >Registrarse</div>
+                <div class="card-body text-primary" >
+                    <form action="/registrarse" method="POST">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nombre completo</label>
+                            <input id="name" name="name" type="text" class="form-control" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3" >
+                            <label for="user" class="form-label">Cuenta de usuario</label>
+                            <input id="user" name="user" type="text" class="form-control">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="user" class="form-label">Rol</label>
+                        <select id="rol" name="rol" class="form-select" aria-label="Default select example" tabindex="2">
+                                <option value="Administrador" selected>Administrador</option>
+                                <option value="Empleado">Empleado</option>               
+                            </select>
+                            </div> 
+                        <div class="mb-3">
+                            <label for="pass" class="form-label">Password</label>
+                            <input id="pass" name="pass" type="password" class="form-control">
+                        </div>
+
+
+
+
+                    </div>
+                    <div class="card-footer bg-trasparent border-primary">
+                        <a href="/menu_principal" type="button" class="btn btn-secondary">Cancelar</a>
+                        <button type="submit" class="btn btn-primary">Registrar</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+</div>
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+ </body>
+</html>

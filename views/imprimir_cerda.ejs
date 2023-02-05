@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.rtl.min.css" integrity="sha384-OXTEbYDqaX2ZY/BOaZV/yFGChYHtrXH2nyXJ372n2Y8abBhrqacCEe+3qhSHtLjy" crossorigin="anonymous">
+  
+    <title >IMPRIMIR CERDA</title>
+   
+  </head>
+
+  <body>
+    
+
+<div id="imprimible">
+  <br><br>
+   <center> <div class="bg-primary text-white">
+    <h1><label for="user" class="form-label">** AGROPECUARIA CALI**</label></h1>
+    </div></center>
+
+    <hr size="5" />
+    
+    <center style="font-size: 50px; ">
+  "INFORMACIÓN DE LA CERDA"
+  </center>
+     <center>
+     
+      <th  scope="col"><div class="mb-3">
+            <H6><label class="form-label">En la presente ficha podemos visualizar la informacion de la cerda cargada en el sistema como todos los datos importantes actualizados </label></H6>
+        </div></th> </center>
+        
+    <div class="container mt-4">
+        <div class="card border-secondary">
+    <table class="table table-bordered table-striped text-center mt-1">
+        <thead>
+
+           <tr>
+
+                <th  scope="col"><div class="mb-3">
+                    <label for="user" class="form-label">ARETE</label>
+                    <input  type="text" class="form-control"   id="arete" name="arete" value="<%=user.arete %>" tabindex="3">
+                </div></th>
+
+
+                <th scope="col"><div class="mb-3">
+                    <label for="user" class="form-label">FECHA DE INGRESO</label>
+                    <input type="text" class="form-control"  id="fecha" name="fecha" value="<%=user.fecha %>" tabindex="1">
+                </div></th>
+
+
+
+
+                <th scope="col"><div class="mb-3">
+                    <label for="user" class="form-label">NOMBRE DE LA CERDA</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" value="<%=user.nombre %>" tabindex="1"> <!-- el nombre del label es user y el ID y el NAME del type formarn el vinculo por ejemplo  user.name-->
+                  </div></th>
+
+              
+
+            </tr>
+            <tr>
+              <th scope="col"><div class="mb-3">
+                <label for="user" class="form-label">TETAS VIABLES</label>
+                <input type="text" class="form-control" id="tetas" name="tetas" value="<%=user.tetas %>" tabindex="1"> <!-- el nombre del label es user y el ID y el NAME del type formarn el vinculo por ejemplo  user.name-->
+              </div></th>
+
+                <th scope="col"><div class="mb-3">
+                    <label for="user" class="form-label">PESO LBS</label>
+                    <input type="text" class="form-control" id="peso" name="peso" value="<%=user.peso %>" tabindex="1"> <!-- el nombre del label es user y el ID y el NAME del type formarn el vinculo por ejemplo  user.name-->
+                  </div></th>
+
+
+                <th scope="col"> <div class="mb-3">
+                    <label for="user" class="form-label">FECHA DE MONTA</label>                  
+                    <input type="datetime" class="form-control" id="fmonta" name="fmonta" value="<%=user.fmonta %>" tabindex="1"> <!-- el nombre del label es user y el ID y el NAME del type formarn el vinculo por ejemplo  user.name-->
+                  </div></th>              
+
+            </tr>
+            <tr>
+              
+              <th scope="col"><div class="mb-3">
+                <label for="user" class="form-label">NOMBRE BARRACO</label>
+                <input type="text" class="form-control" id="nbarraco" name="nbarraco" value="<%=user.nbarraco %>" tabindex="1"> <!-- el nombre del label es user y el ID y el NAME del type formarn el vinculo por ejemplo  user.name-->
+              </div></th>
+              <th scope="col"><div class="mb-3">
+                <label for="user" class="form-label">ESTADO DE CARGA</label>
+                <input type="text" class="form-control" id="confircarga" name="confircarga" value="<%=user.confircarga %>" tabindex="1"> <!-- el nombre del label es user y el ID y el NAME del type formarn el vinculo por ejemplo  user.name-->
+              </div></th>
+              <th scope="col"><div class="mb-3"></div>
+                <label for="user" class="form-label">FECHA DE CONFIRMACION DE CARGA</label>
+        <input type="text" class="form-control" id="fconfirmacion" name="fconfirmacion" value="<%=user.fconfirmacion %>"tabindex="1">
+      </tr>
+      <tr>
+              </th>
+
+              <th scope="col"><div class="mb-3"></div>
+                <label for="user" class="form-label">FECHA DE PARTO</label>
+        <input type="date" class="form-control" id="fparto" name="fparto" value="<%=user.fparto %>" tabindex="1">
+              </th>
+              <th scope="col"><div class="mb-3">
+                <label for="user" class="form-label">OBSERVACIONES</label>
+                <input type="text" class="form-control" id="observaciones" name="observaciones" value="<%=user.observaciones %>" tabindex="1"> <!-- el nombre del label es user y el ID y el NAME del type formarn el vinculo por ejemplo  user.name-->
+              </div></th>
+            </tr>
+        </thead>
+       
+
+
+
+   <% if (user){ %>
+  <form action="/update" method="POST">
+        <input id="id" name="id" value="<%= user.id %>" hidden>
+    </form>
+      <% } %> 
+      
+     </table>
+     </div>
+     
+       
+     </div>
+     
+    </div>
+    
+      
+  </body>
+</html>

@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.rtl.min.css" integrity="sha384-OXTEbYDqaX2ZY/BOaZV/yFGChYHtrXH2nyXJ372n2Y8abBhrqacCEe+3qhSHtLjy" crossorigin="anonymous">
+    <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+    <title>IMPRIMIR NACIMIENTOS</title>
+    <style>
+      body{
+        background-color: rgb(177, 195, 214);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="imprimible">
+     <br><br>
+    <center> <div  class="bg-primary text-white">
+     <H1><label for="user" class="form-label"> ** AGROPECUARIA CALI  **</label></H1>
+     </div></center>
+ 
+ 
+     <hr size="5" />
+ 
+     <center style="font-size: 50px;">"INFORMACION DE NACIMIENTOS"</center>
+                <form action="/update6 " method="POST">
+                  <input id="id" name="id" value="<%= user.id %>" hidden>
+                
+                  <center><th  scope="col"><div class="mb-3">
+                    <H6><label class="form-label">En la presente ficha podemos visualizar la informacion de los productos cargada en el sistema como todos los datos importantes actualizados </label></H6>
+                </div></th> </center>
+              <div class="container mt-4">
+                <div class="card border-secondary">
+            <table class="table table-bordered table-striped text-center mt-1">
+                <thead>
+                  <div class="">
+                    <!--    -->
+                    
+                
+
+                
+                      
+                     
+                      
+                    </thead>
+                   
+   
+                      
+                      <div class="container mt-4">
+                        <div class="card border-secondary">
+                    <table class="table table-bordered table-striped text-center mt-1">
+                        <thead>
+<tr>
+
+  <tr>
+    <th scope="col"> <label for="user" class="form-label">ARETE DE LA CERDA</label>    
+                     
+                    
+      <input type="text" class="form-control" id="arete" name="arete" value="<%=user.arete %>" tabindex="1" >
+  </div>
+   
+  <th scope="col"><div class="mb-3">
+        <label for="user" class="form-label">NOMBRE DE LA CERDA</label>  
+      <input type="text" class="form-control" id="nomcerda" name="nomcerda" value="<%=user.nomcerda %>" tabindex="1" >
+  </div>
+
+
+<th scope="col"><div class="mb-3">
+<label for="user" class="form-label">FECHA DE PARTO</label>               
+<input type="text" class="form-control" id="fechaparto" name="fechaparto" tabindex="1"value="<%=user.fechaparto %>">
+</div></th>
+
+<th scope="col"><div class="mb-3">
+<label for="user" class="form-label">NUMERO DE PARTO</label>
+<input type="number" class="form-control" id="noparto" name="noparto" tabindex="1" value="<%=user.noparto %>">
+</div></th>
+<th scope="col"><div class="mb-3">
+  <label for="user" class="form-label">FINAL</label>
+  <input type="time" class="form-control" id="final" name="final" tabindex="1" value="<%=user.final %>"> 
+</div></th>
+
+
+</tr>
+                          <tr>
+                          
+                        <th scope="col"><div class="mb-3">
+                        <label for="user" class="form-label">LECHON 1</label>
+                        <input type="text" class="form-control" id="lechon1" name="lechon1" tabindex="1" value="<%=user.lechon1 %>">
+                      </div></th>
+
+                      <th scope="col"><div class="mb-3">
+                        <label for="user" class="form-label">LECHON 2</label>
+                        <input type="text" class="form-control" id="lechon2" name="lechon2" tabindex="1" value="<%=user.lechon2 %>">
+                      </div></th>
+
+                      <th scope="col"><div class="mb-3">
+                        <label for="user" class="form-label">LECHON 3</label>
+                        <input type="text" class="form-control" id="lechon3" name="lechon3" tabindex="1" value="<%=user.lechon3 %>">
+                      </div></th>
+                      <th scope="col"><div class="mb-3">
+                        <label for="user" class="form-label">INICIO</label>
+                        <input type="time" class="form-control" id="inicio" name="inicio" tabindex="1" value="<%=user.inicio %>">
+                      </div></th>
+                      <th scope="col"><div class="mb-3">
+                        <label for="user" class="form-label">LECHON 4</label>
+                        <input type="text" class="form-control" id="lechon4" name="lechon4" tabindex="1" value="<%=user.lechon4 %>">
+                      </div></th>
+                   
+
+                      
+                    </tr>
+                    <tr>
+                     
+                      <th scope="col"><div class="mb-3">
+                        <label for="user" class="form-label">LECHON 5</label>
+                        <input type="text" class="form-control" id="lechon5" name="lechon5" tabindex="1" value="<%=user.lechon5 %>">
+                      </div></th>
+                      <th scope="col"><div class="mb-3">
+                        <label for="user" class="form-label">LECHON 6</label>
+                        <input type="text" class="form-control" id="lechon6" name="lechon6" tabindex="1" value="<%=user.lechon6 %>">
+                      </div></th>
+
+                      <th scope="col"><div class="mb-3">
+                        <label for="user" class="form-label">LECHON 7</label>
+                        <input type="text" class="form-control" id="lechon7" name="lechon7" tabindex="1" value="<%=user.lechon7 %>">
+                      </div></th>
+
+                      <th scope="col"><div class="mb-3">
+                        <label for="user" class="form-label">LECHON 8</label>
+                        <input type="text" class="form-control" id="lechon8" name="lechon8" tabindex="1" value="<%=user.lechon8 %>">
+                      </div></th>
+                     
+                      <th scope="col"><div class="mb-3">
+                        <label for="user" class="form-label">LECHON 9</label>
+                        <input type="text" class="form-control" id="lechon9" name="lechon9" tabindex="1" value="<%=user.lechon9 %>">
+                      </div></th>
+                    </tr>
+                    <tr>
+                      
+                      <th scope="col"><div class="mb-3">
+                        <label for="user" class="form-label">LECHON 10</label>
+                        <input type="text" class="form-control" id="lechon10" name="lechon10" tabindex="1" value="<%=user.lechon10 %>">
+                      </div></th>
+                      <th scope="col"><div class="mb-3">
+                        <label for="user" class="form-label">LECHON 11</label>
+                        <input type="text" class="form-control" id="lechon11" name="lechon11" tabindex="1" value="<%=user.lechon11 %>">
+                      </div></th>
+                      <th scope="col"><div class="mb-3">
+                        <label for="user" class="form-label">LECHON 12</label>
+                        <input type="text" class="form-control" id="lechon12" name="lechon12" tabindex="1" value="<%=user.lechon12 %>">
+                      </div></th>
+
+                      <th scope="col"><div class="mb-3">
+                        <label for="user" class="form-label">LECHON 13</label>
+                        <input type="text" class="form-control" id="lechon13" name="lechon13" tabindex="1" value="<%=user.lechon13 %>">
+                      </div></th>
+                      <th scope="col"><div class="mb-3">
+                        <label for="user" class="form-label">LECHON 14</label>
+                        <input type="text" class="form-control" id="lechon14" name="lechon14" tabindex="1" value="<%=user.lechon14 %>"> 
+                      </div></th>
+                    </tr>
+                    <tr>
+                     
+                      <th scope="col"><div class="mb-3">
+                        <label for="user" class="form-label">TRATAMIENTO 1</label>
+                        <input type="text" class="form-control" id="tratamiento1" name="tratamiento1" tabindex="1" value="<%=user.tratamiento1 %>">
+                      </div></th>
+                      
+                      <th scope="col"><div class="mb-3">
+                        <label for="user" class="form-label">TRATAMIENTO 2</label>
+                        <input type="text" class="form-control" id="tratamiento2" name="tratamiento2" tabindex="1" value="<%=user.tratamiento2 %>">
+                      </div></th>
+                      <th scope="col"><div class="mb-3">
+                        <label for="user" class="form-label">TRATAMIENTO 3</label>
+                        <input type="text" class="form-control" id="tratamiento3" name="tratamiento3" tabindex="1" value="<%=user.tratamiento3 %>">
+                      </div></th>
+                      <th scope="col"><div class="mb-3">
+                        <label for="user" class="form-label">TRATAMIENTO 4</label>
+                        <input type="text" class="form-control" id="tratamiento4" name="tratamiento4" tabindex="1" value="<%=user.tratamiento4 %>">
+                      </div></th>
+                      <th scope="col"><div class="mb-3"></div>
+                        
+                      </div></th>
+                    
+                      </thead>                  
+                </form>
+            </div>
+        </div>
+      </div>
+  </body>
+
+</html>

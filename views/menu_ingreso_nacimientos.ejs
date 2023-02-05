@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/2bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/2dataTables.bootstrap5.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link href="css/ingreso.css " rel="stylesheet">
+    <title>INFORMACIÓN DE PARTO</title>
+    <style>
+      body{
+        background-color: rgb(177, 195, 214);
+      }
+    </style>
+</head>
+<body>
+  <a href="menu_ingreso_cerda"><img class="inicio1" src="img/home.png"  alt="" ></a>
+  
+  
+<center style="padding-top: 10px;"><h1>INFORMACIÓN DE PARTO</h1></center>
+      
+      <div class="">
+       
+      <table id="users" class="table table-bordered table-striped text-center " style="font-size: 11px;">
+        <thead>
+          <tr class="text-white" style="background-color:#6200ee;">
+            <th scope="col">ID</th>
+            <th scope="col">ARETE CERDA</th>
+            <th scope="col">NOMBRE CERDA</th>   
+            <th scope="col">CODIGO NACIMIENTO</th>         
+            <th scope="col">PRECIO</th>    
+            <th scope="col">CANTIDAD DISPONIBLE/VENTA</th>            
+            <th scope="col">PARTO NO.</th>
+            <th scope="col">NACIDOS VIVOS</th>  
+            <th scope="col">NACIDOS MUERTOS</th> 
+            <th scope="col">MOMIAS</th>
+            <th scope="col">TOTAL NACIDOS</th>
+            <th scope="col">FECHA PARTO</th>
+            <th scope="col">ATENDIDO POR</th>
+            <th scope="col"></th>
+            <th scope="col">ACCIONES</th>  
+            <th scope="col"></th>   
+            <th scope="col">INFO. NACIMIENTOS</th>  
+            <th scope="col">INFO. TEMPERATURA</th>  
+            <th scope="col">INFO. MUERTES</th>  
+            <th scope="col">INFO. DESTETE</th> 
+         
+
+          </tr>
+        </thead>
+        <!-- <tbody>       
+        </tbody> -->
+      </table>
+
+      </div>
+      
+
+      <script src="js/2bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>  
+      <script type="text/javascript" language="javascript" src="js//2jquery-3.5.1.js"></script>
+      <script type="text/javascript" language="javascript" src="js/2jquery.dataTables.min.js"></script>
+      <script type="text/javascript" language="javascript" src="js/2dataTables.bootstrap5.min.js"></script>        
+      <script src="js/2sweetalert2@10.js"></script>
+  
+  <script > 
+  //const datos = <%- JSON.stringify(data) %>;
+  //console.log(datos);
+  $('#users').DataTable({    
+    ajax: {
+        url: "/data_ingreso_nacimientos",
+        dataSrc: ""
+    },   
+    columns: [ 
+        {"data": "id"},  
+        {"data": "aretecerda"}, 
+        {"data": "cerda"},       
+        {'data': 'lotelechon'}, 
+        {'data': 'precio'},          
+        {'data': 'cantidad'}, 
+        {'data': 'nparto'}, 
+        {'data': 'nacvivos'}, 
+        {'data': 'nacmuertos'}, 
+        {'data': 'momias'}, 
+        {'data': 'nactotal'}, 
+        {'data': 'fechaparto'}, 
+        {'data': 'atendido'}, 
+        {"data": null,
+            "render": function (data) { 
+                return '<a href="/edit5/'+data.id+ '"class="btn btn-info"><i class="fas fa-edit"></i></a>'      
+                                 
+              
+              }
+        },
+        {"data": null,
+            "render": function (data) { 
+                return '<a onclick="confirmar('+data.id+')" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>'      
+                                 
+              
+              }
+        },
+        {"data": null,
+            "render": function (data) { 
+                return '<a href="/imprimirNacimiento/'+data.id+'"class="btn btn-success"><i class="fas fa-print"></i></a>'      
+                                 
+              
+              }
+        },
+        {"data": null,
+            "render": function (data) { 
+                return '<a href="/infonac/'+data.id+'"class="btn btn-warning"><i class="fas fa-plus"></i></a>'      
+                                 
+              
+              }
+        },
+        {"data": null,
+            "render": function (data) { 
+                return '<a href="/temperaturaCerda/'+data.id+'"class="btn btn-warning"><i class="fas fa-plus"></i></a>'      
+                                 
+              
+              }
+        },
+        {"data": null,
+            "render": function (data) { 
+                return '<a href="/muertelechones/'+data.id+'"class="btn btn-warning"><i class="fas fa-plus"></i></a>'      
+                                 
+              
+              }
+        },
+        {"data": null,
+            "render": function (data) { 
+                return '<a href="/nuevodestete/'+data.id+'"class="btn btn-warning"><i class="fas fa-plus"></i></a>'      
+                                 
+              
+              }
+        },
+      
+    ],
+    
+    pageLength : 5,
+    lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 'Todos']]     
+  }); 
+
+
+  function confirmar(id) {
+    Swal.fire({
+        title: '¿Está seguro que desea eliminar el registro: '+id+'?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#6c757d',
+        confirmButtonText: 'Confirmar'
+      }).then((result) => {
+        if (result.isConfirmed) {   
+          window.location = '/delete5/'+id;                              
+        }
+    });
+  };
+  </script>
+  <h1>MENÚS PRINCIPALES</h1>
+<a href="/menu_informacion_nacimientos" type="button" class="btn btn-info">INFORMACION DE NACIMIENTOS</a>
+<a href="/menu_temperatura_cerda" type="button" class="btn btn-info">TEMPERATURA CERDA</a>
+<a href="/menu_muertes_lechones" type="button" class="btn btn-info">MUERTE DE LECHONES</a>
+<a href="/menu_ingreso_destete" type="button" class="btn btn-info">INFORMACION DE DESTETE</a>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+ 
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.101.0">
+    <script src="js/chart.js"></script>
+    
+   
+    <title>MENÚ PRINCIPAL</title>
+
+    
+    
+<!--Bootstrap core CSS-->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/dashboard.css " rel="stylesheet">
+<link href="css/menu_principal.css " rel="stylesheet">
+<link href="css/menu_vertical.css " rel="stylesheet">
+
+
+
+    <!-- Custom styles for this template -->
+    
+  </head>
+  <body>
+    
+<header class="navbar navbar-dark sticky-top flex-md-nowrap p-0 shadow" style="background-color: rgb(29, 32, 69);"><!--Color de barra superior-->
+  <a href="#"><img class="logo" src="img/LOGO.ico"  alt="" ></a>
+
+  
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3    sidebar  " style="background-color:rgb(29, 32, 69); width: 237px;" > <!--Color de menú-->
+        <ul class="list">
+
+            <li class="list__item list__item--click">
+                <div class="list__button list__button--click">
+                    <img src="img/consultas.svg" class="list__img">
+                    <a href="#" class="nav__link">CONSULTAS</a>
+                    <img src="img/arrow.svg" class="list__arrow">
+                </div>
+
+                <ul class="list__show">
+                    <li class="list__inside">
+                        <a href="consultas_cerdas" class="nav__link nav__link--inside">Consultar cerdas</a>
+                    </li>
+
+                    <li class="list__inside">
+                        <a href="consultas_barracos" class="nav__link nav__link--inside">Consultar barracos</a>
+                    </li>
+                    <li class="list__inside">
+                      <a href="consultas_pachas" class="nav__link nav__link--inside">Consultar pachas seminales</a>
+                  </li>
+                  <li class="list__inside">
+                    <a href="consultas_productos" class="nav__link nav__link--inside">Consultar productos</a>
+                </li>
+               
+                </ul>
+
+            </li>
+
+            <li class="list__item list__item--click">
+                <div class="list__button list__button--click">
+                    <img src="img/cargar.svg" class="list__img">
+                    <a href="#" class="nav__link">CARGAR</a>
+                    <img src="img/arrow.svg" class="list__arrow">
+                </div>
+
+                <ul class="list__show">
+                    <li class="list__inside">
+                        <a href="menu_ingreso_cerda" class="nav__link nav__link--inside">Ingresar cerdas</a>
+                    </li>
+
+                    <li class="list__inside">
+                        <a href="menu_ingreso_barracos" class="nav__link nav__link--inside">Ingresar barracos</a>
+                    </li>
+
+                    <li class="list__inside">
+                        <a href="menu_ingreso_pachas" class="nav__link nav__link--inside">Ingresar pachas seminales</a>
+                    </li>
+                    <li class="list__inside">
+                      <a href="menu_ingreso_producto" class="nav__link nav__link--inside">Ingresar prodductos</a>
+                  </li>
+                </li>
+                <li class="list__inside">
+                  <a href="acceso_denegado" class="nav__link nav__link--inside">Ingresar ventas</a>
+              </li>
+                </ul>
+
+            </li>
+            <li class="list__item list__item--click">
+              <div class="list__button list__button--click">
+                  <img src="img/inventario.svg" class="list__img">
+                  <a href="#" class="nav__link">INVENTARIO</a>
+                  <img src="img/arrow.svg" class="list__arrow">
+              </div>
+              <ul class="list__show">
+                  <li class="list__inside">
+                      <a href="acceso_denegado.ejs" class="nav__link nav__link--inside">Ventas</a>
+                      <a href="acceso_denegado.ejs" class="nav__link nav__link--inside">Ventas del día</a>
+                      <a href="acceso_denegado.ejs" class="nav__link nav__link--inside">Ventas totales</a>
+                  </li>
+
+              </ul>
+
+          </li>
+          <li class="list__item list__item--click">
+            <div class="list__button list__button--click">
+                <img src="img/usuarios.svg" class="list__img">
+                <a href="#" class="nav__link">USUARIOS</a>
+                <img src="img/arrow.svg" class="list__arrow">
+            </div>
+            <ul class="list__show">
+                <li class="list__inside">
+                    <a href="registrarse" class="nav__link nav__link--inside">NUEVOS</a>
+                </li>
+                <li class="list__inside">
+                  <a href="usuario" class="nav__link nav__link--inside">LISTADO</a>
+              </li>
+
+            </ul>
+
+        </li>
+        <li class="list__item list__item--click">
+          <div class="list__button list__button--click">
+              <img src="img/cerrar.svg" class="list__img">
+              <a href="logout" class="nav__link">SALIR</a>
+          </div>
+          
+
+      </li>
+
+
+            
+
+        </ul>
+    </nav>
+
+    
+    <!--CONTENIDO PRINCIPAL-->+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="     pt-2 pb-1  border-bottom">
+        <h3 style="color: white;" >AGROPECUARIA CALI</h3>
+        <h3 style="color: white;" >BIENVENIDO:
+          <% if (user) { %>
+            <span class="badge " style="color: rgb(255, 255, 255);""><%= user.name %></span>
+            <span class="badge " style="color: rgb(255, 255, 255);""><%= user.rol %></span>
+          <% } %>
+         
+        </h3>
+      
+
+      </div>
+      <canvas id="myChart" width="100"></canvas>
+      <!--Espacio para las graficas-->
+     
+        <script src="js/graficas.js"></script>
+      
+    </main>
+  </div>
+</div>
+<script src="js/menu_vertical.js"></script>
+</body>
+</html>

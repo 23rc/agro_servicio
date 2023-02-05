@@ -1,0 +1,33 @@
+body{
+    background: white;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+}
+img{
+    width: 30%;
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    color: black;
+    font-size: 20px;
+}
+
+button{
+    padding: 15px 30px;
+    border-radius: 15px;
+    border: none;
+    background-color: black;
+    color: white;
+
+}

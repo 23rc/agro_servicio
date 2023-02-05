@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/2bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/2dataTables.bootstrap5.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link href="css/ingreso.css " rel="stylesheet">
+    <title>CONSULTAS DE CERDAS</title>
+    <style>
+        body{
+          background-color: rgba(0, 0, 0, 0.244);
+        }
+      </style>
+</head>
+<body>
+  <a href="menu_principal"><img class="inicio1" src="img/home.png"  alt="" ></a>
+  
+  
+<center style="padding-top: 10px;"><h1>CONSULTAS DE CERDAS</h1></center>
+      
+      <div class="">
+    
+      <table id="users" class="table table-bordered table-striped text-center " style="font-size: 10.5px;">
+        <thead>
+          <tr class="text-white" style="background-color:#efcc07d8;">
+            <th scope="col">ID</th>
+            <th scope="col">ARETE</th>
+            <th scope="col">FECHA/INGRESO</th>            
+            <th scope="col">NOMBRE/CERDA</th>    
+            <th scope="col">TETAS</th>            
+            <th scope="col">PESO</th>            
+            <th scope="col">FECHA/MONTA</th>            
+            <th scope="col">NOMBRE/BARRACO/PACHAS</th>    
+            <th scope="col">ESTADO CARGA</th>
+            <th scope="col">FECHA/CONFIRMACION/CARGA</th> 
+            <th scope="col">FECHA/PARTO</th>         
+            <th scope="col">OBSERVACIONES</th>      
+          
+       
+
+          </tr>
+        </thead>
+        <!-- <tbody>       
+        </tbody> -->
+      </table>
+
+      </div>
+      
+
+      <script src="js/2bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>  
+      <script type="text/javascript" language="javascript" src="js//2jquery-3.5.1.js"></script>
+      <script type="text/javascript" language="javascript" src="js/2jquery.dataTables.min.js"></script>
+      <script type="text/javascript" language="javascript" src="js/2dataTables.bootstrap5.min.js"></script>        
+      <script src="js/2sweetalert2@10.js"></script>
+  
+  <script > 
+  //const datos = <%- JSON.stringify(data) %>;
+  //console.log(datos);
+  $('#users').DataTable({    
+    ajax: {
+        url: "/data_consultas_cerdas",
+        dataSrc: ""
+    },   
+    columns: [ 
+        {"data": "id"},        
+        {'data': 'arete'},
+        {'data': 'fecha'}, 
+        {'data': 'nombre'},          
+        {'data': 'tetas'}, 
+        {'data': 'peso'}, 
+        {'data': 'fmonta'}, 
+        {'data': 'nbarraco'},
+        {'data': 'confircarga'}, 
+        {'data': 'fconfirmacion'},
+        {'data': 'fparto'},
+        {'data': 'observaciones'}, 
+     
+    ],
+    
+    pageLength : 5,
+    lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 'Todos']]     
+  }); 
+
+
+  function confirmar(id) {
+    Swal.fire({
+        title: '¿Está seguro que desea eliminar el registro: '+id+'?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#6c757d',
+        confirmButtonText: 'Confirmar'
+      }).then((result) => {
+        if (result.isConfirmed) {   
+          window.location = '/delete/'+id;                              
+        }
+    });
+  };
+  </script>
+
+</body>
+</html>

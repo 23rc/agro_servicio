@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/2bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/2dataTables.bootstrap5.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link href="css/ingreso.css " rel="stylesheet">
+    <title>TEMPERATURA CERDA</title>
+    <style>
+      body{
+        background-color: rgb(177, 195, 214);
+      }
+    </style>
+</head>
+<body>
+  <a href="menu_ingreso_nacimientos"><img class="inicio1" src="img/home.png"  alt="" ></a>
+  
+  
+<center style="padding-top: 10px;"><h1>TEMPERATURA CERDA</h1></center>
+      
+      <div class="">
+       
+      <table id="users" class="table table-bordered table-striped text-center " style="font-size: 11px;">
+        <thead>
+          <tr class="text-white" style="background-color:#6200ee;">
+            <th scope="col">ID</th>
+            <th scope="col">ARETE CERDA</th>
+            <th scope="col">NOMBRE CERDA</th>   
+            <th scope="col">NUMERO DE PARTO</th>         
+            <th scope="col">FECHA DE PARTO</th>    
+            <th scope="col">TEMPERATURA1/ FECHA</th>    
+            <th scope="col">TEMPERATURA2/ FECHA</th> 
+            <th scope="col">TEMPERATURA3/ FECHA</th> 
+            <th scope="col">TEMPERATURA4/ FECHA</th> 
+            <th scope="col">TEMPERATURA5/ FECHA</th> 
+            <th scope="col">TEMPERATURA6/ FECHA</th> 
+            <th scope="col">TEMPERATURA7/ FECHA</th> 
+            <th scope="col">TEMPERATURA8/ FECHA</th> 
+            <th scope="col">TEMPERATURA9/ FECHA</th> 
+            <th scope="col">TEMPERATURA10/ FECHA</th> 
+            <th scope="col">TEMPERATURA11/ FECHA</th>    
+            <th scope="col">TRATAMIENTO1/ FECHA</th>    
+            <th scope="col">TRATAMIENTO2/ FECHA</th>    
+           
+            <th scope="col"></th>
+            <th scope="col">ACCIONES</th>  
+            <th scope="col"></th>   
+
+          </tr>
+        </thead>
+        <!-- <tbody>       
+        </tbody> -->
+      </table>
+
+      </div>
+      
+
+      <script src="js/2bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>  
+      <script type="text/javascript" language="javascript" src="js//2jquery-3.5.1.js"></script>
+      <script type="text/javascript" language="javascript" src="js/2jquery.dataTables.min.js"></script>
+      <script type="text/javascript" language="javascript" src="js/2dataTables.bootstrap5.min.js"></script>        
+      <script src="js/2sweetalert2@10.js"></script>
+  
+  <script > 
+  //const datos = <%- JSON.stringify(data) %>;
+  //console.log(datos);
+  $('#users').DataTable({    
+    ajax: {
+        url: "/data_temperatura_cerda",
+        dataSrc: ""
+    },   
+    columns: [ 
+        {"data": "id"},  
+        {"data": "aretecerda"}, 
+        {"data": "nomcerda"},   
+        {"data": "noparto"},
+        {"data": "fechaparto"}, 
+        {"data": "temperatura1"},      
+        {"data": "temperatura2"}, 
+        {"data": "temperatura3"}, 
+        {"data": "temperatura4"}, 
+        {"data": "temperatura5"}, 
+        {"data": "temperatura6"}, 
+        {"data": "temperatura7"}, 
+        {"data": "temperatura8"}, 
+        {"data": "temperatura9"}, 
+        {"data": "temperatura10"}, 
+        {"data": "temperatura11"}, 
+        {"data": "tratamiento1"},
+        {"data": "tratamiento2"},
+
+       
+        {"data": null,
+            "render": function (data) { 
+                return '<a href="/edit7/'+data.id+ '"class="btn btn-info"><i class="fas fa-edit"></i></a>'      
+                                 
+              
+              }
+        },
+        {"data": null,
+            "render": function (data) { 
+                return '<a onclick="confirmar('+data.id+')" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>'      
+                                 
+              
+              }
+        },
+        {"data": null,
+            "render": function (data) { 
+                return '<a href="/imprimirTemperatura/'+data.id+'"class="btn btn-success"><i class="fas fa-print"></i></a>'      
+                                 
+              
+              }
+        },
+    ],
+    
+    pageLength : 5,
+    lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 'Todos']]     
+  }); 
+
+
+  function confirmar(id) {
+    Swal.fire({
+        title: '¿Está seguro que desea eliminar el registro: '+id+'?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#6c757d',
+        confirmButtonText: 'Confirmar'
+      }).then((result) => {
+        if (result.isConfirmed) {   
+          window.location = '/delete7/'+id;                              
+        }
+    });
+  };
+  </script>
+
+</body>
+</html>

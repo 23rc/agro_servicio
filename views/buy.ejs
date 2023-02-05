@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VENTA DE LECHONES</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/shop.css">
+    <link rel="stylesheet" href="css/buy.css">
+    <link href="css/ingreso.css " rel="stylesheet">
+    <style>
+        body{
+          background-color: rgb(177, 195, 214);
+        }
+      </style>
+</head>
+<body>
+    <div class="shopHeader">
+        
+        <p>VENTA DE LECHONES</p>
+       
+    </div>
+
+  
+    <a href="menu_principal"><img class="inicio1" src="img/home.png"  alt="" ></a>
+    <div class="adminContainer">
+        <div class="adminLeftSide">
+      
+          
+        </div>
+        
+        <div class="adminRightSide">
+            <!-- ********** Availbe medicine Here ************ -->
+           
+            <div class="buyShopRight">
+                
+                <div class="addMedecineContainer containerHeader">
+                    
+                    <p class="successAddDB"></p>
+                    
+                </div>
+    <a href="codigos_venta" class="btn btn-info text-center" style="text-align: center;" id="cancelar" >"VER ID DE EXISTENCIAS"</a>
+
+                <!-- Buy medicine Form Here  -->
+                <div class="buyMedecineForm">
+                    <form class="FormReset">
+                        <span>NOMBRE DEL CLIENTE</span>
+                        <input type="text" class="customerName" value="" placeholder="Cliente">
+                        <span>LOTE DE LECHONES</span>
+                        <input type="number" min="1" class="medicineID" value="1">
+                        <span>CANTIDAD</span>
+                        <input type="number" min="1" class="medicineQuantity" value="1">
+                        <span class="totalAmout">Total a pagar = 0 Quetzales</span> 
+                        <div class="button">
+                            <button type="submit" class="buyMedicineButton" >VENDER</button>
+                            <button type="reset">VACIAR</button>
+                        </div>
+                        <div class="button2">
+                            <button class="reloadPage" ></button>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+      <!-- <div class="adminContainer">
+        <idv class="adminLeftSide">
+
+        </idv>
+        <div class="adminRightSide">
+            
+        </div>
+    </div> -->
+   <script src="js/buy.js"></script>
+</body>
+</html>

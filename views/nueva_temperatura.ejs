@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.rtl.min.css" integrity="sha384-OXTEbYDqaX2ZY/BOaZV/yFGChYHtrXH2nyXJ372n2Y8abBhrqacCEe+3qhSHtLjy" crossorigin="anonymous">
+    <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+    <title>NUEVA TEMPERATURA</title>
+    <style>
+      body{
+        background-color: rgb(177, 195, 214);
+      }
+    </style>
+  </head>
+  <body>
+    <center style="padding-top: 10px;"><h1>NUEVA TEMPERATURA</h1> </center>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+      <div class="container mt-4">
+        <div class="card border-secondary" style="background-color: rgba(154, 149, 182, 0.578);">
+            <div class="card-header">Nuevo Registro</div>
+            <div class="card-body">
+                <form action="/save7" method="POST">
+                
+                <div class="">
+<!--    -->
+                  <!-- <label for="user" class="form-label">ARETE DE LA CERDA</label>     -->
+
+                  <input type="text" class="form-control" id="aretecerda" name="aretecerda" value="<%=user.aretecerda %>" hidden>
+              </div>
+               
+                <div class="mb-3">
+                  <!--   <label for="user" class="form-label">NOMBRE DE LA CERDA</label>   -->
+                  
+                 
+                  <input type="text" class="form-control" id="nomcerda" name="nomcerda" value="<%=user.cerda %>" hidden>
+              </div>
+              <div class="mb-3">
+                <!--  <label for="user" class="form-label">FECHA DE PARTO</label>   -->
+                
+              
+               <input type="text" class="form-control" id="fechaparto" name="fechaparto" value="<%=user.fechaparto %>" tabindex="1" hidden>
+           </div>
+                    <div class="mb-3">
+                      <!--  <label for="user" class="form-label">NUMERO DE PARTO</label>   -->
+                       
+                        <input type="number" class="form-control" id="noparto" name="noparto" tabindex="1" value="<%=user.nparto %>"  hidden>
+                    </div>
+                    <div class="mb-3">
+                        <label for="user" class="form-label">TEMPERATURA 1/FECHA</label>
+                        <input type="text" class="form-control" id="temperatura1" name="temperatura1" tabindex="1"   >
+                    </div>
+                    <div class="mb-3">
+                        <label for="user" class="form-label">TEMPERATURA2 1/FECHA</label>
+                        <input type="text" class="form-control" id="temperatura2" name="temperatura2" tabindex="1"   >
+                    </div>
+                    <div class="mb-3">
+                        <label for="user" class="form-label">TEMPERATURA 3/FECHA</label>
+                        <input type="text" class="form-control" id="temperatura3" name="temperatura3" tabindex="1"   >
+                    </div>
+                    <div class="mb-3">
+                        <label for="user" class="form-label">TEMPERATURA 4/FECHA</label>
+                        <input type="text" class="form-control" id="temperatura4" name="temperatura4" tabindex="1"   >
+                    </div>
+                    <div class="mb-3">
+                        <label for="user" class="form-label">TEMPERATURA 5/FECHA</label>
+                        <input type="text" class="form-control" id="temperatura5" name="temperatura5" tabindex="1"   >
+                    </div>
+                    <div class="mb-3">
+                        <label for="user" class="form-label">TEMPERATURA 6/FECHA</label>
+                        <input type="text" class="form-control" id="temperatura6" name="temperatura6" tabindex="1"   >
+                    </div>
+                    <div class="mb-3">
+                        <label for="user" class="form-label">TEMPERATURA 7/FECHA</label>
+                        <input type="text" class="form-control" id="temperatura7" name="temperatura7" tabindex="1"   >
+                    </div>
+                    <div class="mb-3">
+                        <label for="user" class="form-label">TEMPERATURA 8/FECHA</label>
+                        <input type="text" class="form-control" id="temperatura8" name="temperatura8" tabindex="1"   >
+                    </div>
+                    <div class="mb-3">
+                        <label for="user" class="form-label">TEMPERATURA 9/FECHA</label>
+                        <input type="text" class="form-control" id="temperatura9" name="temperatura9" tabindex="1"   >
+                    </div>
+                    <div class="mb-3">
+                        <label for="user" class="form-label">TEMPERATURA 10/FECHA</label>
+                        <input type="text" class="form-control" id="temperatura10" name="temperatura10" tabindex="1"   >
+                    </div>
+                    <div class="mb-3">
+                        <label for="user" class="form-label">TEMPERATURA 11/FECHA</label>
+                        <input type="text" class="form-control" id="temperatura11" name="temperatura11" tabindex="1"   >
+                    </div>
+                      <div class="mb-3">
+                        <label for="user" class="form-label">TRATAMIENTO 1</label>
+                        <input type="text" class="form-control" id="tratamiento1" name="tratamiento1" tabindex="1" >
+                      </div>
+                      <div class="mb-3">
+                        <label for="user" class="form-label">TRATAMIENTO 2</label>
+                        <input type="text" class="form-control" id="tratamiento2" name="tratamiento2" tabindex="1" >
+                      </div>
+                      
+                    <button type="submit" class="btn btn-primary" tabindex="5">Guardar</button>
+                    <a href="/menu_ingreso_nacimientos" class="btn btn-secondary">Cancelar</a>
+                </form>
+            </div>
+        </div>
+      </div>
+   
+  </body>
+</html>

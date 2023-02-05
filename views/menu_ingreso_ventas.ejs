@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/2bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/2dataTables.bootstrap5.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link href="css/ingreso.css " rel="stylesheet">
+    <title>MENÚ DE VENTAS</title>
+    <style>
+      body{
+        background-color: rgb(177, 195, 214);
+      }
+    </style>
+</head>
+<body>
+  <a href="menu_principal"><img class="inicio1" src="img/home.png"  alt="" ></a>
+  
+  
+<center style="padding-top: 10px;"><h1>MENU DE VENTAS</h1></center>
+      
+      <div class="">
+        
+        
+      <table id="users" class=" table table-bordered table-striped text-center " style="font-size: 17px; ">
+        <thead>
+          <tr class="text-white" style="background-color:#6200ee;">
+            <th scope="col">ID</th>
+            <th scope="col">CLIENTES</th>
+            <th scope="col">LOTE LECHONES</th>            
+            <th scope="col">VENTA DEL DIA</th>    
+            <th scope="col">TOTAL</th>             
+            <th scope="col">ACCIONES</th>  
+    
+            
+          
+        
+
+          </tr>
+        </thead>
+        <!-- <tbody>       
+        </tbody> -->
+      </table>
+
+      </div>
+      
+
+    
+      <script type="text/javascript" language="javascript" src="js//2jquery-3.5.1.js"></script>
+      <script type="text/javascript" language="javascript" src="js/2jquery.dataTables.min.js"></script>
+      <script type="text/javascript" language="javascript" src="js/2dataTables.bootstrap5.min.js"></script>        
+      <script src="js/2sweetalert2@10.js"></script>
+  
+  <script > 
+  //const datos = <%- JSON.stringify(data) %>;
+  //console.log(datos);
+  $('#users').DataTable({    
+    ajax: {
+        url: "/data_ingreso_ventas",
+        dataSrc: ""
+    },   
+    columns: [ 
+        {"data": "ID"},        
+        {'data': 'clientes'},
+        {'data': 'lotelechones'}, 
+        {'data': 'ventadia'},          
+        {'data': 'Total'},  
+        {"data": null,
+            "render": function (data) { 
+                return '<a onclick="confirmar('+data.ID+')" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>'      
+                                 
+              
+              }
+        }
+        
+    ],
+    
+    pageLength : 5,
+    lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 'Todos']]     
+  }); 
+
+
+  function confirmar(id) {
+    Swal.fire({
+        title: '¿Está seguro que desea eliminar el registro: '+id+'?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#6c757d',
+        confirmButtonText: 'Confirmar'
+      }).then((result) => {
+        if (result.isConfirmed) {   
+          window.location = '/deleteVENTAS/'+id;                              
+        }
+    });
+  };
+  </script>
+
+
+</body>
+</html>

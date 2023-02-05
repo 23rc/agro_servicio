@@ -1,0 +1,44 @@
+body{
+    background-color: rgb(55, 55, 55);
+}
+.boton{
+    background-color:rgb(29, 32, 69);;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding-right: 89px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.links a{
+    text-decoration: none;
+    color:rgb(254, 254, 254);
+    display: block;
+    padding: 13px;
+    
+}
+.links{
+    background-color:rgb(43, 47, 100); ;
+    width: 245px;
+    display:none;
+
+    
+}
+.links a:hover{
+    background-color:rgb(29, 32, 69);;
+    color: white;
+}
+.desplegable:hover .links{
+    display:block;
+}
+
+.logo{
+    
+    width: 70px;
+    margin-left: 80px;
+   
+}
+
+
+
+

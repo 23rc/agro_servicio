@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.rtl.min.css" integrity="sha384-OXTEbYDqaX2ZY/BOaZV/yFGChYHtrXH2nyXJ372n2Y8abBhrqacCEe+3qhSHtLjy" crossorigin="anonymous">
+    <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+    <title>IMPRIMIR DESTETE</title>
+    <style>
+      body{
+        background-color: rgb(177, 195, 214);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="imprimible">
+      <center> <div  class="bg-primary text-white">
+        <H1><label for="user" class="form-label"> *** AGROPECUARIA CALI ***</label></H1>
+        </div></center>
+    
+        <hr size="5" />
+    
+        <center style="font-size: 50px;">"INFORMACIÓN DE DESTETE"</center>
+    
+             <center><th  scope="col"><div class="mb-3">
+                <H6><label class="form-label">En la presente ficha podemos visualizar la informacion de los productos cargada en el sistema como todos los datos importantes actualizados </label></H6>
+            </div></th> </center>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+      <div class="container mt-4">
+        <div class="card border-secondary" style="background-color: rgba(154, 149, 182, 0.578);">
+  
+            <div class="card-body">
+                <form action="/update9" method="POST">
+                    <input id="id" name="id" value="<%= user.id %>" hidden>
+
+<!--    -->
+                  <div class="container mt-4">
+                  <div class="card border-secondary">
+                  <table class="table table-bordered table-striped text-center mt-1">
+                  <thead>
+
+                  <th scope="col"><div class="mb-3"></div>
+                  <label for="user" class="form-label">ARETE DE LA CERDA</label>
+                  <input type="text" class="form-control" id="aretecerda" name="aretecerda" value="<%=user.aretecerda %>" tabindex="1">
+              </div>
+               
+                  <th scope="col"><div class="mb-3"></div>
+                  <label for="user" class="form-label">NOMBRE DE LA CERDA</label>
+                  <input type="text" class="form-control" id="nomcerda" name="nomcerda" value="<%=user.nomcerda %>" tabindex="1">
+              </div>
+
+                <th scope="col"><div class="mb-3"></div>
+                <label for="user" class="form-label">NUMERO DE PARTO</label>                 
+                <input type="number" class="form-control" id="noparto" name="noparto" tabindex="1" value="<%=user.noparto %>">
+            </div>
+
+              <th scope="col"><div class="mb-3"></div>
+              <label for="user" class="form-label">FECHA DE PARTO</label> 
+               <input type="text" class="form-control" id="fechaparto" name="fechaparto" tabindex="1" value="<%=user.fechaparto %>">
+           </div>
+          </TR>
+           <TR>
+                
+                        <th scope="col"><div class="mb-3"></div>
+                        <label for="user" class="form-label">PESO EN LIBRAS LECHON 1</label>
+                        <input type="text" class="form-control" id="lechon1" name="lechon1" tabindex="1" step="0.001" oninput="calcular()" value="<%=user.lechon1 %>">
+                      </div>
+
+                        <th scope="col"><div class="mb-3"></div>
+                        <label for="user" class="form-label">PESO EN LIBRAS LECHON 2</label>
+                        <input type="text" class="form-control" id="lechon2" name="lechon2" tabindex="1" step="0.001" oninput="calcular()" value="<%=user.lechon2 %>">
+                      </div>
+
+                        <th scope="col"><div class="mb-3"></div>
+                        <label for="user" class="form-label">PESO EN LIBRAS LECHON 3</label>
+                        <input type="text" class="form-control" id="lechon3" name="lechon3" tabindex="1" step="0.001" oninput="calcular()" value="<%=user.lechon3 %>">
+                      </div>
+
+                        <th scope="col"><div class="mb-3"></div>
+                        <label for="user" class="form-label">PESO EN LIBRAS LECHON 4</label>
+                        <input type="text" class="form-control" id="lechon4" name="lechon4" tabindex="1" step="0.001" oninput="calcular()" value="<%=user.lechon4 %>">
+                      </div>
+                    </TR>
+                    <TR>
+
+                        <th scope="col"><div class="mb-3"></div>
+                        <label for="user" class="form-label">PESO EN LIBRAS LECHON 5</label>
+                        <input type="text" class="form-control" id="lechon5" name="lechon5" tabindex="1" step="0.001" oninput="calcular()" value="<%=user.lechon5 %>">
+                      </div>
+
+                        <th scope="col"><div class="mb-3"></div>
+                        <label for="user" class="form-label">PESO EN LIBRAS LECHON 6</label>
+                        <input type="text" class="form-control" id="lechon6" name="lechon6" tabindex="1" step="0.001" oninput="calcular()" value="<%=user.lechon6 %>">
+                      </div>
+
+                        <th scope="col"><div class="mb-3"></div>
+                        <label for="user" class="form-label">PESO EN LIBRAS LECHON 7</label>
+                        <input type="text" class="form-control" id="lechon7" name="lechon7" tabindex="1" step="0.001" oninput="calcular()" value="<%=user.lechon7 %>">
+                      </div>
+
+                        <th scope="col"><div class="mb-3"></div>
+                        <label for="user" class="form-label">PESO EN LIBRAS LECHON 8</label>
+                        <input type="text" class="form-control" id="lechon8" name="lechon8" tabindex="1" step="0.001" oninput="calcular()" value="<%=user.lechon8 %>"> 
+                      </div>
+
+                    </TR>
+                    <TR>
+                        <th scope="col"><div class="mb-3"></div>
+                        <label for="user" class="form-label">PESO EN LIBRAS LECHON 9</label>
+                        <input type="text" class="form-control" id="lechon9" name="lechon9" tabindex="1" step="0.001" oninput="calcular()" value="<%=user.lechon9 %>">
+                      </div>
+
+                        <th scope="col"><div class="mb-3"></div>
+                        <label for="user" class="form-label">PESO EN LIBRAS LECHON 10</label>
+                        <input type="text" class="form-control" id="lechon10" name="lechon10" tabindex="1" step="0.001" oninput="calcular()" value="<%=user.lechon10 %>">
+                      </div>
+                      <th scope="col"><div class="mb-3"></div>
+                        <label for="user" class="form-label">PESO EN LIBRAS LECHON 11</label>
+                        <input type="text" class="form-control" id="lechon11" name="lechon11" tabindex="1" step="0.001" oninput="calcular()" value="<%=user.lechon11 %>">
+                      </div>
+
+                        <th scope="col"><div class="mb-3"></div>
+                        <label for="user" class="form-label">PESO EN LIBRAS LECHON 12</label>
+                        <input type="text" class="form-control" id="lechon12" name="lechon12" tabindex="1" step="0.001" oninput="calcular()" value="<%=user.lechon12 %>">
+                      </div>
+                    </TR>
+                    <TR>
+
+                        <th scope="col"><div class="mb-3"></div>
+                        <label for="user" class="form-label">PESO EN LIBRAS LECHON 13</label>
+                        <input type="text" class="form-control" id="lechon13" name="lechon13" tabindex="1" step="0.001" oninput="calcular()" value="<%=user.lechon13 %>">
+                      </div>
+
+                        <th scope="col"><div class="mb-3"></div>
+                        <label for="user" class="form-label">PESO EN LIBRAS LECHON 14</label>
+                        <input type="text" class="form-control" id="lechon14" name="lechon14" tabindex="1" step="0.001" oninput="calcular()" value="<%=user.lechon14 %>">
+                      </div>
+                      <th scope="col"><div class="mb-3"></div>
+                        <label for="user" class="form-label">TOTAL DE PESOS</label>                         
+                          <input type="text" class="form-control" id="totalpeso" name="totalpeso" tabindex="1" value="<%=user.totalpeso %>">
+                        </div>
+  
+  
+  
+                        <th scope="col"><div class="mb-3"></div>
+                          <label for="user" class="form-label">ENCARGADO</label>
+                          <input type="text" class="form-control" id="encargado" name="encargado" tabindex="1"value="<%=user.encargado %>">
+                        </div>
+                    </TR>
+                    <TR>
+                     
+
+                      
+                      <SCript type="text/javascript">
+                        function calcular(){
+                          try{
+                            var a= parseFloat(document.getElementById("lechon1").value)||0,
+                                b= parseFloat(document.getElementById("lechon2").value)||0,
+                                c= parseFloat(document.getElementById("lechon3").value)||0,
+                                d= parseFloat(document.getElementById("lechon4").value)||0,
+                                e= parseFloat(document.getElementById("lechon5").value)||0,
+                                f= parseFloat(document.getElementById("lechon6").value)||0,
+                                g= parseFloat(document.getElementById("lechon7").value)||0,
+                                h= parseFloat(document.getElementById("lechon8").value)||0,
+                                i= parseFloat(document.getElementById("lechon9").value)||0,
+                                j= parseFloat(document.getElementById("lechon10").value)||0,
+                                k= parseFloat(document.getElementById("lechon11").value)||0,
+                                l= parseFloat(document.getElementById("lechon12").value)||0,
+                                m= parseFloat(document.getElementById("lechon13").value)||0,
+                                n= parseFloat(document.getElementById("lechon14").value)||0;
+                            
+                                document.getElementById("totalpeso").value=a+b+c+d+e+f+g+h+i+j+k+l+m+n;
+                             
+
+                          }catch(e){}
+                        }
+                      </SCript>
+                      <th scope="col"><div class="mb-3"></div>
+                     
+                    </div>
+                  </thead>
+                </form>
+            </div>
+        </div>
+      </div>
+   
+  </body>
+</html>
